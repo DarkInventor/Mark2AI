@@ -284,11 +284,11 @@ export default function Home() {
               </div>
             </form>
             <span className="mt-5 inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
+              ➡️
             </span>
           </h2>
           <p className={`m-0 max-w-[50ch] text-lg opacity-50`}>
-            Paste the Link and Click Search to start sending DMs to first 100
+            Paste the Link and Click Search to start sending DMs to first 200
             members of that group
           </p>
         </a>

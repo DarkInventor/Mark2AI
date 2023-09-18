@@ -162,7 +162,7 @@ export default function Home() {
   const [searchInput, setSearchInput] = useState('');
 
   // Step 3: Add an event handler for the form submission
-  const linkedindm = async (url: any) => {
+  const linkedindm = async (url) => {
     try {
       if (!url) {
         console.error('LinkedIn URL not provided');
@@ -336,4 +336,4 @@ export default function Home() {
       </div>
     </main>
   );
-}
+      }

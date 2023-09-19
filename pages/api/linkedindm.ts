@@ -368,7 +368,16 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       const messageButtons = await page.$$('button[aria-label^="Message "]');
       if (messageButtons.length > currentIndex) {
         // Wait for the button to become clickable
-        await messageButtons[currentIndex].click({ waitFor: 'domcontentloaded' });
+       
+        // await messageButtons[currentIndex].click({ waitFor: 'domcontentloaded' });
+
+
+
+
+        await messageButtons[currentIndex].click();
+
+        // Wait for a navigation event, if applicable
+        // await page.waitForNavigation();
 
         // Wait for the message input field to appear
         await page.waitForSelector('div.msg-form__contenteditable[contenteditable="true"]', { timeout: 30000 });

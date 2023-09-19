@@ -334,11 +334,11 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     }
 
     const browser = await puppeteer.launch({
-      headless: true,
+      headless: false,
       userDataDir,
-      args: [
-        '--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.0.0 Safari/537.36',
-      ],
+      // args: [
+      //   '--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.0.0 Safari/537.36',
+      // ],
     });
 
     const pages = await browser.pages();

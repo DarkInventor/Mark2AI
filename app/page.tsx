@@ -174,7 +174,7 @@ export default function Home() {
         const data = await response.json();
         console.log(data.message);
       } else {
-        console.error('Error sending LinkedIn message');
+        console.error('Error sending LinkedIn message', url);
       }
     } catch (error) {
       console.error('Error sending LinkedIn message:', error);

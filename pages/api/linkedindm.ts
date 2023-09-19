@@ -315,6 +315,8 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import puppeteer from 'puppeteer';
 import os from 'os';
+const path = require('path');
+
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   try {
@@ -325,10 +327,10 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     let userDataDir;
     if (os.platform() === 'win32') {
       // Windows
-      userDataDir = `${homeDir}\\AppData\\Local\\Google\\Chrome\\User Data`;
+      userDataDir = path.join(homeDir, 'AppData', 'Local', 'Google', 'Chrome', 'User Data');
     } else {
       // macOS and other platforms
-      userDataDir = `${homeDir}/Library/Application Support/Google/Chrome/Default`;
+      userDataDir = path.join(homeDir, 'Library', 'Application Support', 'Google', 'Chrome', 'Default');
     }
 
     const browser = await puppeteer.launch({

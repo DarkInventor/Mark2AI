@@ -162,7 +162,7 @@ export default function Home() {
   const [searchInput, setSearchInput] = useState('');
 
   // Step 3: Add an event handler for the form submission
-  const linkedindm = async (url) => {
+  const linkedindm = async (url: string) => {
     try {
       if (!url) {
         console.error('LinkedIn URL not provided');
@@ -181,7 +181,12 @@ export default function Home() {
     }
   };
 
-  const handleFormSubmit = (e) => {
+  // const handleFormSubmit = (e) => {
+  //   e.preventDefault();
+  //   linkedindm(searchInput); // Pass the LinkedIn URL to the linkedindm function
+  // };
+  
+  const handleFormSubmit = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
     linkedindm(searchInput); // Pass the LinkedIn URL to the linkedindm function
   };
